@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoltRoar Support</title>
+<meta name="description" content="VoltRoar gives electric cars a real-time virtual engine sound. Support, compatibility and FAQ.">
+<style>
+  :root {
+    --bg: #0E1116; --card: #171B22; --line: #262C36; --text: #E8EAED;
+    --muted: #9AA3AF; --accent: #FF5A1F; --warn-bg: #2A1A12;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 56px; }
+  header { margin-bottom: 28px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 48px; height: 48px; border-radius: 12px; background: var(--accent);
+    display: grid; place-items: center; font-weight: 800; font-size: 22px; color: #fff;
+  }
+  h1 { font-size: 32px; line-height: 1.15; margin: 0; }
+  .tag { color: var(--muted); margin: 10px 0 0; }
+  h2 { font-size: 20px; margin: 0 0 12px; }
+  h3 { font-size: 16px; margin: 18px 0 4px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px; margin: 0 0 16px;
+  }
+  .card.compat { border-color: var(--accent); background: linear-gradient(0deg, var(--card), var(--warn-bg)); }
+  .compat h2 { color: var(--accent); }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  p { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid .card { margin: 0; }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 26px; } }
+  .pill {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    padding: 2px 8px; border-radius: 999px; background: var(--accent); color: #fff; vertical-align: middle;
+  }
+  footer { margin-top: 32px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">V</div>
+      <h1>VoltRoar</h1>
+    </div>
+    <p class="tag">A real-time virtual combustion-engine sound for your electric car.</p>
+  </header>
+
+  <section class="card">
+    <h2>What is VoltRoar?</h2>
+    <p>VoltRoar connects over Bluetooth LE to an OBD adapter plugged into your car, reads only the vehicle speed and accelerator pedal, and synthesizes an engine sound that revs, shifts gears and roars along with you. Sound plays through your iPhone or your car's speakers, also in the background.</p>
+    <p><strong>Tip: use a cable for zero delay.</strong> Connect your iPhone to the car with a cable — wired CarPlay or wired audio if possible. Wireless connections (Bluetooth, wireless CarPlay) can add a serious delay between the pedal and the sound.</p>
+    <p>VoltRoar is <strong>read-only</strong>: it never writes to your car or changes any setting.</p>
+    <p>No car? Manual mode lets you tap <em>Start Engine</em> and drag an on-screen throttle pedal anywhere.</p>
+  </section>
+
+  <section class="card compat">
+    <h2>Compatibility</h2>
+    <ul>
+      <li>Tested with <strong>BYD electric vehicles</strong> and with <strong>genuine (original) ELM327 and Fnirsi OBD adapters</strong>.</li>
+      <li><strong>A genuine OBD adapter is required.</strong> Non-genuine (clone) adapters were tested and do not work.</li>
+      <li>Compatible with all BYD electric vehicles.</li>
+      <li>Support for other electric vehicles will be added in future updates.</li>
+    </ul>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Requirements</h2>
+      <ul>
+        <li>iPhone with iOS 15 or later</li>
+        <li>For Car mode: a BYD electric vehicle and a genuine ELM327 or Fnirsi Bluetooth LE OBD adapter</li>
+        <li>Manual mode needs no extra hardware</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Free and Pro</h2>
+      <p><strong>Free:</strong> V4 engine, Manual mode, Car mode, tachometer, virtual gearbox.</p>
+      <p><span class="pill">PRO</span> One-time purchase: V6, V8, V10, V12 engines; turbo whistle, blow-off valve, backfire pops; Gauges page (speed, RPM, brake, torque, odometer); Battery page (power, regen, charge level, temperature, charge count, trip energy — estimates from the car's control units; for exact battery health visit an authorized dealer); Performance page with 0–100 km/h, 0–60 mph, 80–120 km/h timers, top speed and G-force meter.</p>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:16px">
+    <h2>FAQ</h2>
+
+    <h3>My adapter doesn't connect. What should I do?</h3>
+    <p>A <strong>genuine (original) ELM327 or Fnirsi</strong> Bluetooth LE adapter is required. Clone adapters were tested and do not work. Also check that the adapter is fully plugged into the OBD port, the car is switched on, Bluetooth is enabled for VoltRoar in iOS Settings, and the adapter is not connected to another app. Do not pair it in iOS Settings; connect from inside VoltRoar.</p>
+
+    <h3>Connection takes a while on first connect.</h3>
+    <p>On BYD vehicles VoltRoar first wakes up the car's diagnostic gateway. Progress is shown on screen; this can take some seconds.</p>
+
+    <h3>Does it work with my non-BYD electric car?</h3>
+    <p>Not yet. Car mode currently supports BYD electric vehicles. Support for other electric vehicles will be added in future updates. Manual mode works with any iPhone.</p>
+
+    <h3>Can VoltRoar harm my car?</h3>
+    <p>VoltRoar only reads speed and accelerator pedal data. It never writes to the vehicle, changes settings or clears codes.</p>
+
+    <h3>Does the sound keep playing when the screen is locked?</h3>
+    <p>Yes. VoltRoar keeps playing in the background and mixes with other audio such as navigation.</p>
+
+    <h3>I bought Pro on another device or reinstalled the app.</h3>
+    <p>Open the VoltRoar Pro purchase screen in the app and tap <em>Restore Purchases</em>, signed in with the same Apple ID.</p>
+
+    <h3>Is VoltRoar a pedestrian warning sound?</h3>
+    <p>No. VoltRoar is for entertainment and does not replace your car's legally required pedestrian warning sound (AVAS).</p>
+  </section>
+
+  <section class="card">
+    <h2>Safety</h2>
+    <ul>
+      <li>Keep the volume at a reasonable level and follow local laws on vehicle sounds.</li>
+      <li>Do not operate your phone while driving. Set up before you drive.</li>
+      <li>VoltRoar does not replace the car's legally required pedestrian warning sound (AVAS).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Contact</h2>
+    <p>Questions, bug reports or feature requests: <a href="mailto:s.alperogan@gmail.com">s.alperogan@gmail.com</a></p>
+    <p class="muted">Please include your iPhone model, iOS version, car model and adapter model.</p>
+  </section>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a> · &copy; 2026 VoltRoar
+  </footer>
+</main>
+</body>
+</html>
