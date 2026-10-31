@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VoltRoar Support</title>
-<meta name="description" content="VoltRoar gives electric cars a real-time virtual engine sound. Support, compatibility and FAQ.">
+<meta name="description" content="VoltRoar gives electric cars a real-time virtual engine sound. Support, compatibility, plans and FAQ.">
 <style>
   :root {
     --bg: #0E1116; --card: #171B22; --line: #262C36; --text: #E8EAED;
-    --muted: #9AA3AF; --accent: #FF5A1F; --warn-bg: #2A1A12;
+    --muted: #9AA3AF; --accent: #FF5A1F; --gold: #FFC43D; --green: #34C759; --warn-bg: #2A1A12;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -42,9 +42,15 @@
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .grid .card { margin: 0; }
   @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 26px; } }
-  .pill {
-    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em;
-    padding: 2px 8px; border-radius: 999px; background: var(--accent); color: #fff; vertical-align: middle;
+  .plan { margin: 0 0 12px; }
+  .plan .head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .plan .name { font-size: 17px; font-weight: 700; }
+  .plan .price { font-weight: 700; }
+  .plan .price small { color: var(--muted); font-weight: 600; }
+  .best { border-color: var(--accent); }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .04em;
+    padding: 2px 7px; border-radius: 6px; background: var(--gold); color: #000; vertical-align: middle; margin-left: 6px;
   }
   footer { margin-top: 32px; color: var(--muted); font-size: 14px; }
 </style>
@@ -61,19 +67,19 @@
 
   <section class="card">
     <h2>What is VoltRoar?</h2>
-    <p>VoltRoar connects over Bluetooth LE to an OBD adapter plugged into your car, reads only the vehicle speed and accelerator pedal, and synthesizes an engine sound that revs, shifts gears and roars along with you. Sound plays through your iPhone or your car's speakers, also in the background.</p>
-    <p><strong>Tip: use a cable for zero delay.</strong> Connect your iPhone to the car with a cable — wired CarPlay or wired audio if possible. Wireless connections (Bluetooth, wireless CarPlay) can add a serious delay between the pedal and the sound.</p>
-    <p>VoltRoar is <strong>read-only</strong>: it never writes to your car or changes any setting.</p>
+    <p>VoltRoar connects over Bluetooth LE to an OBD adapter plugged into your car, reads your speed and accelerator pedal, and synthesizes an engine sound that revs, shifts gears and roars along with you — choose from a V4, V6, V8, V10, V12, a big-turbo inline-6 or a high-revving flat-6, with turbo whistle, blow-off and backfire crackle. Sound plays through your iPhone or your car's speakers, also in the background.</p>
+    <p><strong>Tip: use a cable for zero delay.</strong> Connect your iPhone to the car with a cable — wired CarPlay or wired audio if possible. Wireless connections (Bluetooth, wireless CarPlay) can add a serious delay between the pedal and the sound. There is also a “Lower music while playing” option so the engine stands out over your music.</p>
+    <p>VoltRoar is <strong>read-only</strong>: it never writes to your car or changes any setting — it only reads the data your car provides over its standard OBD-II port.</p>
     <p>No car? Manual mode lets you tap <em>Start Engine</em> and drag an on-screen throttle pedal anywhere.</p>
   </section>
 
   <section class="card compat">
     <h2>Compatibility</h2>
     <ul>
-      <li>Tested with <strong>BYD electric vehicles</strong> and with <strong>genuine (original) ELM327 and Fnirsi OBD adapters</strong>.</li>
-      <li><strong>A genuine OBD adapter is required.</strong> Non-genuine (clone) adapters were tested and do not work.</li>
-      <li>Compatible with all BYD electric vehicles.</li>
-      <li>Support for other electric vehicles will be added in future updates.</li>
+      <li><strong>BYD electric vehicles — full data.</strong> Speed, throttle, Gauges, Battery and odometer. Tested on BYD EVs.</li>
+      <li><strong>Other cars — “Other”, standard OBD (beta).</strong> Reads speed and accelerator over standard OBD-II to drive the engine sound. Experimental; may not work on every car, depending on the vehicle's ECU model, year and software.</li>
+      <li>More car makers are listed as <strong>coming soon</strong> and will be enabled in future updates.</li>
+      <li><strong>A genuine (original) ELM327 or Fnirsi Bluetooth OBD adapter is required.</strong> Clone adapters were tested and do not work.</li>
     </ul>
   </section>
 
@@ -82,14 +88,25 @@
       <h2>Requirements</h2>
       <ul>
         <li>iPhone with iOS 15 or later</li>
-        <li>For Car mode: a BYD electric vehicle and a genuine ELM327 or Fnirsi Bluetooth LE OBD adapter</li>
-        <li>Manual mode needs no extra hardware</li>
+        <li>For Car mode: a genuine ELM327 or Fnirsi Bluetooth LE OBD adapter, and a supported car</li>
+        <li>Manual mode needs no extra hardware or car</li>
       </ul>
     </section>
     <section class="card">
-      <h2>Free and Pro</h2>
-      <p><strong>Free:</strong> V4 engine, Manual mode, Car mode, tachometer, virtual gearbox.</p>
-      <p><span class="pill">PRO</span> One-time purchase: V6, V8, V10, V12 engines; turbo whistle, blow-off valve, backfire pops; Gauges page (speed, RPM, brake, torque, odometer); Battery page (power, regen, charge level, temperature, charge count, trip energy — estimates from the car's control units; for exact battery health visit an authorized dealer); Performance page with 0–100 km/h, 0–60 mph, 80–120 km/h timers, top speed and G-force meter.</p>
+      <h2>Plans</h2>
+      <p class="muted" style="margin-bottom:12px">One-time, lifetime unlocks — no subscription. Prices may vary by region.</p>
+      <div class="plan">
+        <div class="head"><span class="name">Free</span><span class="price"><small>included</small></span></div>
+        <p class="muted">V4 engine, Manual &amp; Car modes, tachometer, virtual gearbox.</p>
+      </div>
+      <div class="plan">
+        <div class="head"><span class="name">Pro</span><span class="price">$7.49 <small>lifetime</small></span></div>
+        <p class="muted">All engines (V6, V8, V10, V12, inline-6 turbo, flat-6), all effects (turbo, blow-off, backfire) and the Gauges page.</p>
+      </div>
+      <div class="plan">
+        <div class="head"><span class="name">Max <span class="badge">BEST VALUE</span></span><span class="price">$12.49 <small>lifetime</small></span></div>
+        <p class="muted">Everything in Pro, plus the Battery and Performance pages (0–100 km/h, 0–60 mph, 80–120 km/h timers, top speed and a G-force meter).</p>
+      </div>
     </section>
   </div>
 
@@ -102,17 +119,20 @@
     <h3>Connection takes a while on first connect.</h3>
     <p>On BYD vehicles VoltRoar first wakes up the car's diagnostic gateway. Progress is shown on screen; this can take some seconds.</p>
 
-    <h3>Does it work with my non-BYD electric car?</h3>
-    <p>Not yet. Car mode currently supports BYD electric vehicles. Support for other electric vehicles will be added in future updates. Manual mode works with any iPhone.</p>
+    <h3>Does it work with my non-BYD car?</h3>
+    <p>You can try it: choose <strong>Other</strong> in the vehicle list. VoltRoar then connects over standard OBD-II and reads speed and accelerator for the engine sound. This is experimental (beta) and may not work on every car — it depends on the vehicle's ECU model, production year and software. Named brands shown as “coming soon” will get full support in future updates. Manual mode works on any iPhone, with no car.</p>
+
+    <h3>What's the difference between Pro and Max?</h3>
+    <p><strong>Pro</strong> unlocks all engine sounds, all effects and the Gauges page. <strong>Max</strong> adds the Battery and Performance pages — and includes everything in Pro. Both are one-time, lifetime purchases.</p>
 
     <h3>Can VoltRoar harm my car?</h3>
-    <p>VoltRoar only reads speed and accelerator pedal data. It never writes to the vehicle, changes settings or clears codes.</p>
+    <p>No. VoltRoar is read-only. It only reads the data the car provides over its standard OBD-II port; it never writes to the vehicle, changes settings or clears codes.</p>
 
     <h3>Does the sound keep playing when the screen is locked?</h3>
-    <p>Yes. VoltRoar keeps playing in the background and mixes with other audio such as navigation.</p>
+    <p>Yes. VoltRoar keeps playing in the background. When music is playing you can turn on “Lower music while playing” so the engine stands out.</p>
 
-    <h3>I bought Pro on another device or reinstalled the app.</h3>
-    <p>Open the VoltRoar Pro purchase screen in the app and tap <em>Restore Purchases</em>, signed in with the same Apple ID.</p>
+    <h3>I bought Pro or Max on another device, or reinstalled the app.</h3>
+    <p>Open the purchase screen in the app and tap <em>Restore Purchases</em>, signed in with the same Apple ID.</p>
 
     <h3>Is VoltRoar a pedestrian warning sound?</h3>
     <p>No. VoltRoar is for entertainment and does not replace your car's legally required pedestrian warning sound (AVAS).</p>
@@ -134,7 +154,7 @@
   </section>
 
   <footer>
-    <a href="privacy.html">Privacy Policy</a> · &copy; 2026 VoltRoar
+    <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Disclaimer</a> · &copy; 2026 VoltRoar
   </footer>
 </main>
 </body>
